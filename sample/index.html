@@ -27,9 +27,10 @@ function SendLoginRequest(username,password)
 
 <h1>Login Page</h1>
 <form method="POST" id="loginform" onsubmit="formSubmission();return false;" >
-	Username: <input type="text" name="username"><br>
-	Password: <input type="password" name="password"><br>
+	Username: <input type="text" id ="user" name="username"><br>
+	Password: <input type="password" id="pass" name="password"><br>
 	<input type="submit">
+	In case you need to register: <button type="button" onclick="window.location.href='registration.html'">Click to Register</button>
 </form>
 <body>
 <div id="textResponse">
@@ -37,7 +38,9 @@ awaiting response
 </div>
 <script>
 function formSubmission(event) {
-	SendLoginRequest("kehoed","12345");
+	let username= document.getElementByID('user');
+	let password= document.getElementByID('pass');
+	SendLoginRequest(username,password);
 }
 </script>
 </body>
