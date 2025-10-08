@@ -11,6 +11,10 @@ function doLogin($username,$password)
     return true;
     //return false if not valid
 }
+function doRegister($username,$password){
+	//tell db to create user with username and password
+	return true;
+}
 
 function requestProcessor($request)
 {
@@ -22,7 +26,9 @@ function requestProcessor($request)
   }
   switch ($request['type'])
   {
-    case "login":
+    case "register":
+	  return doRegister($request['username'],$request['password']);  
+    case "login": 
       return doLogin($request['username'],$request['password']);
     case "validate_session":
       return doValidate($request['sessionId']);

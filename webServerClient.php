@@ -3,7 +3,7 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
-
+exec('php test.php');
 $client = new rabbitMQClient("webserverRequest.ini","testServer");
 if (isset($argv[1]))
 {

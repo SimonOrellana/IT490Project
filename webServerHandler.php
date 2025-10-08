@@ -7,13 +7,16 @@ require_once('rabbitMQLib.inc');
 function doLogin($username,$password)
 {
     // lookup username in databas
-    // check password
+	// check password
+    
+   // include('dbRequestClient.php');
     return true;
     //return false if not valid
 }
 
 function requestProcessor($request)
 {
+  include('dbRequestClient.php');
   echo "received request".PHP_EOL;
   var_dump($request);
   if(!isset($request['type']))
@@ -22,7 +25,8 @@ function requestProcessor($request)
   }
   switch ($request['type'])
   {
-    case "login":
+  case "login":
+	  
       return doLogin($request['username'],$request['password']);
     case "validate_session":
       return doValidate($request['sessionId']);
@@ -32,7 +36,7 @@ function requestProcessor($request)
 
 $server = new rabbitMQServer("webserverRequest.ini","testServer");
 
-echo "dbResquestHandler BEGIN".PHP_EOL;
+echo "wsResquestHandler BEGIN".PHP_EOL;
 $server->process_requests('requestProcessor');
 echo "dbRequestHandler  END".PHP_EOL;
 exit();
