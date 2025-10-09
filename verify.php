@@ -2,8 +2,8 @@
 	require_once('mysqlconnect.php');
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-		$_POST['username'];
-		$_POST['password'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 
 		$query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
 
