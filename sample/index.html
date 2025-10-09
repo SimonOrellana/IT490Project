@@ -26,7 +26,7 @@ function SendLoginRequest(username,password)
 </script>
 
 <h1>Login Page</h1>
-<form method="POST" id="loginform" onsubmit="formSubmission();return false;" >
+<form method="POST" id="loginform" >
 	Username: <input type="text" id ="user" name="username"><br>
 	Password: <input type="password" id="pass" name="password"><br>
 	<input type="submit">
@@ -37,11 +37,14 @@ function SendLoginRequest(username,password)
 awaiting response
 </div>
 <script>
-function formSubmission(event) {
-	let username= document.getElementByID('user');
-	let password= document.getElementByID('pass');
+var form=document.getElementById("loginform");
+function formHandler(event) { 
+	event.preventDefault();
+	var username= document.getElementById("user").value;
+	var password=document.getElementById("pass").value;
 	SendLoginRequest(username,password);
 }
+form.addEventListener('submit', formHandler);
 </script>
 </body>
 </html>
