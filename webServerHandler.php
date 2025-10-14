@@ -8,8 +8,10 @@ function doLogin($username,$password)
 {
     // lookup username in databas
 	// check password
-    
-    exec("php dbRequestClient.php $username $password");
+    echo("running dbRequest");
+    $output;    
+    //exec("php dbRequestClient.php $username $password",$output);
+    echo($output);
     return true;
     //return false if not valid
 }
