@@ -9,7 +9,7 @@ function doLogin($username,$password)
     // lookup username in databas
 	// check password
     
-    include('dbRequestClient.php');
+    exec("php dbRequestClient.php $username $password");
     return true;
     //return false if not valid
 }

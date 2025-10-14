@@ -8,7 +8,7 @@ function doLogin($username,$password)
 {
     // lookup username in databas
     // check password
-	include('verify.php');
+	exec("php verify.php $username $password");
 	echo "login test";
 	return true;
     //return false if not valid
