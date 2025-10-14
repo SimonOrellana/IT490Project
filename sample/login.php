@@ -1,6 +1,7 @@
 <?php
-
-
+$username = $_POST['username'];
+$password = $_POST['password'];
+echo $username;
 if (!isset($_POST))
 {
 	$msg = "NO POST MESSAGE SET, POLITELY FUCK OFF";
@@ -15,7 +16,7 @@ switch ($request["type"])
 		$response = "login, yeah we can do that";
 	break;
 }
-echo json_encode($response);
+echo json_encode($username);
 exit(0);
 
 ?>
