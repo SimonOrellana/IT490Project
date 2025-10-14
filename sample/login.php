@@ -1,7 +1,6 @@
 <?php
-$username = $_POST['username'];
-$password = $_POST['password'];
-echo $username;
+$username = $_POST['uname'];
+$password = $_POST['pword'];
 if (!isset($_POST))
 {
 	$msg = "NO POST MESSAGE SET, POLITELY FUCK OFF";
