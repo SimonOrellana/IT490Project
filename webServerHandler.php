@@ -3,22 +3,21 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
-
+require('dbRequestClient.php');
 function doLogin($username,$password)
 {
     // lookup username in databas
 	// check password
     echo("running dbRequest");
-    $output;    
-    //exec("php dbRequestClient.php $username $password",$output);
-    echo($output);
+    sendRabbitDb('login',$username,$password);
     return true;
     //return false if not valid
 }
 
 function requestProcessor($request)
 {
-  include('dbRequestClient.php');
+  
+  
   echo "received request".PHP_EOL;
   var_dump($request);
   if(!isset($request['type']))
