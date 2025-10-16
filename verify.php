@@ -2,7 +2,7 @@
 	require_once('mysqlconnect.php');
 
 		function doVerify($username,$password){
-		if($_SERVER['REQUEST_METHOD'] == 'POST') {
+		//if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		/*
 		$username = $_POST['username'];
@@ -22,6 +22,6 @@
 		else {
 			echo "Incorrect username or password";
 		}
-		}
+		//}
 		}
 ?>
