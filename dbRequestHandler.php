@@ -3,12 +3,12 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
-
+require_once('verify.php');
 function doLogin($username,$password)
 {
     // lookup username in databas
     // check password
-	exec("php verify.php $username $password");
+	doVerify($username,$password);
 	echo "login test";
 	return true;
     //return false if not valid
