@@ -5,7 +5,7 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
 
-//sendRabbitWeb("Login","testuser","testpassword");
+sendRabbitWeb("login","testuser","testpassword");
 function sendRabbitWeb($type,$username,$password){
 
 $client = new rabbitMQClient("webserverRequest.ini","testServer");
@@ -21,7 +21,7 @@ else
  */
 $msg = "test message";
 $request = array();
-$request['type'] = "Login";
+$request['type'] = "login";
 $request['username'] = $username;
 $request['password'] = $password;
 $request['message'] = $msg;
