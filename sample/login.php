@@ -1,4 +1,6 @@
+#!/usr/bin/php
 <?php
+
 $username = $_POST['uname'];
 $password = $_POST['pword'];
 if (!isset($_POST))
@@ -11,11 +13,11 @@ $request = $_POST;
 $response = "unsupported request type, politely FUCK OFF";
 switch ($request["type"])
 {
-	case "login":
+case "login":
 		$response = "login, yeah we can do that";
 	break;
 }
-echo json_encode($username);
+echo json_encode($response);
 exit(0);
 
 ?>
