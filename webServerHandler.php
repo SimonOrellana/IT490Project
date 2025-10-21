@@ -13,6 +13,10 @@ function doLogin($username,$password)
     
     //return false if not valid
 }
+function doRegister($username,$password){
+return sendRabbitDb('register',$username,$password);
+
+}
 
 function requestProcessor($request)
 {
@@ -30,7 +34,9 @@ function requestProcessor($request)
 	  
       return doLogin($request['username'],$request['password']);
     case "validate_session":
-      return doValidate($request['sessionId']);
+	    return doValidate($request['sessionId']);
+    case "register":
+      return doRegister($request['username'],$request['password']);
   }
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
