@@ -9,8 +9,8 @@ function doLogin($username,$password)
     // lookup username in databas
 	// check password
     echo("running dbRequest");
-    sendRabbitDb('login',$username,$password);
-    return true;
+    return sendRabbitDb('login',$username,$password);
+    
     //return false if not valid
 }
 

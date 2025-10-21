@@ -8,9 +8,9 @@ function doLogin($username,$password)
 {
     // lookup username in databas
     // check password
-	doVerify($username,$password);
+	return doVerify($username,$password);
 	echo "login test";
-	return true;
+	
     //return false if not valid
 }
 function doRegister($username,$password){
