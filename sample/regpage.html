@@ -1,8 +1,61 @@
 <html>
-        <form method="POST" id="registrationform" onsubmit="regSubmission();return false;" >
-                Username: <input type="text" name="username"><br>
-                Password: <input type="password" name="password"><br>
+	<script>
+		function HandleLoginResponse(response){
+        		var text = JSON.parse(response);
+		//      document.getElementById("textResponse").innerHTML = response+"<p>";     
+        		document.getElementById("textResponse").innerHTML = "response: "+text+"<p>";
+		}
+
+		function SendLoginRequest(username,password){
+        		var request = new XMLHttpRequest();
+        		request.open("POST","login.php",true);
+        		request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        		request.onreadystatechange= function ()
+        		{
+                		if ((this.readyState == 4)&&(this.status == 200))
+                		{
+                        		HandleLoginResponse(this.responseText);
+                		}               
+        		}
+        		request.send("type=login&uname="+encodeURIComponent(username)+"&pword="+encodeURIComponent(password));
+		}
+
+	</script>
+
+
+	<h1>Register Page</h1>
+        <form method="POST" id="regform">
+                Username: <input type="text" id="user" name="username"><br>
+                Password: <input type="password" id="password" name="password"><br>
+		Confirm Password: <input type="password" id="confirmpass" name="password"><br>
                 <input type="submit">
+		To go back to login page: <button type="button" onclick="window.location.href='index.html'">Back to login</button>
         </form>
+	<body>
+		<div id="textResponse">
+			Awaiting response
+		</div>
+		<script>
+			var regform=document.getElementById("regform");
+			function formHandler(event) {
+				var regform=document.getElementById("regform");
+                        	event.preventDefault();
+                        	var username=document.getElementById("user").value;
+                        	var password=document.getElementById("password").value;
+                        	var confirm_password=document.getElementById("confirmpass").value;
+                        	if(password === confirm_password){
+                                	SendLoginRequest(username,password);
+                        	}
+                        	else{
+                                	document.getElementById("textResponse").innerHTML = "The passwords should match";
+                        	}
+
+			}
+			regform.addEventListener('submit', formHandler);
+
+
+
+		</script>
+	</body>
 </html>
 
