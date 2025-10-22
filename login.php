@@ -4,12 +4,12 @@ $username = $_POST['uname'];
 $password = $_POST['pword'];
 if (!isset($_POST))
 {
-	$msg = "NO POST MESSAGE SET, POLITELY FUCK OFF";
+	$msg = "NO POST MESSAGE SET";
 	echo json_encode($msg);
 	exit(0);
 }
 $request = $_POST;
-$response = "unsupported request type, politely FUCK OFF";
+$response = "unsupported request type";
 switch ($request["type"])
 {
 case "login":
