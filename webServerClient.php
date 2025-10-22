@@ -30,7 +30,7 @@ $response = $client->send_request($request);
 
 echo "client received response: ".PHP_EOL;
 print_r($response);
-return true;
+return $response;
 echo "\n\n";
 
 //echo $argv[0]." END".PHP_EOL;

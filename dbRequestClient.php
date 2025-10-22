@@ -20,7 +20,7 @@ else
  */
 $msg = "test message";
 $request = array();
-$request['type'] = "login";
+$request['type'] = $type;
 $request['username'] = $username;
 $request['password'] = $password;
 $request['message'] = $msg;
