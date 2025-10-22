@@ -16,9 +16,9 @@ case "login":
 	//Insert code that will pass login values and return true/false from RabbitMQ
 	$is_valid = true;
 	if($is_valid) {
-		session_start();	
+		session_start();
 		$_SESSION['token'] = random_bytes(12);
-		header("Location: login_page.html");
+		$response = ['Redirect' => 'login_page.php'];
 	}
 	else {
 		$response = 'Incorrect login information, please try again';
