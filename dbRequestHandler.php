@@ -8,7 +8,7 @@ function doLogin($username,$password)
 {
     // lookup username in databas
     // check password
-	return doVerify($username,$password);
+	return array(doVerify($username,$password));
 	echo "login test";
 	
     //return false if not valid
@@ -35,7 +35,7 @@ function requestProcessor($request)
     case "validate_session":
       return doValidate($request['sessionId']);
   }
-  return array("returnCode" => '0', 'message'=>"Server received request and processed");
+  //return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
 
 $server = new rabbitMQServer("dbRequest.ini","testServer");
