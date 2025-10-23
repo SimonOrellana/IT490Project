@@ -1,13 +1,14 @@
+#!/usr/bin/php
 
 <?php
 require_once('path.inc');
 //require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
-$usern = $_POST['uname'];
-$passw = $_POST['pword'];
+//$usern = $_POST['uname'];
+//$passw = $_POST['pword'];
 
-sendRabbitWeb("login",$usern,$passw);
-
+//sendRabbitWeb("login",$usern,$passw);
+sendRabbitWeb('login','joe','password');
 function sendRabbitWeb($type,$username,$password){
 
 $client = new rabbitMQClient("webserverRequest.ini","testServer");
@@ -37,7 +38,7 @@ return array(true);
 echo "\n\n";
 
 //echo $argv[0]." END".PHP_EOL;
-//}
+}
 
 
 ?>
