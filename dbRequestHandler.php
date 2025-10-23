@@ -3,7 +3,7 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
-//require_once('fetchData.php');
+require_once('fetchData.php');
 
 //require_once('verify.php');
 function doLogin($username,$password)
@@ -11,7 +11,7 @@ function doLogin($username,$password)
     // lookup username in databas
     // check password
 	//return array(doVerify($username,$password));
-	return "abcefg";
+	//return "abcefg";
 	
 	return fetch();
 	
