@@ -8,7 +8,7 @@ function doLogin($username,$password)
 {
     // lookup username in databas
     // check password
-    return true;
+	return "what if";
     //return false if not valid
 }
 

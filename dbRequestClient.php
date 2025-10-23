@@ -5,8 +5,8 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
 //sendRabbitDb('login','testuser','testpassword');
+
 function sendRabbitDb($type,$username,$password){
-	echo'function start';
 $client = new rabbitMQClient("dbRequest.ini","testServer");
 /*
 if (isset($argv[1]))
