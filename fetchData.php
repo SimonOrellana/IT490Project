@@ -8,6 +8,6 @@ $dbname = "verification";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $query = "SELECT username FROM users WHERE username = 'brandon' AND password = 'bmc52'";
-
-return $query;
+$result = mysqli_query($conn,$query);
+return $result;
 }
