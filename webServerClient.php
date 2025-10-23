@@ -1,12 +1,11 @@
-#!/usr/bin/php
+
 <?php
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
 
-sendRabbitWeb("login","testuser","testpassword");
-function sendRabbitWeb($type,$username,$password){
+//function sendRabbitWeb($type,$username,$password){
 
 $client = new rabbitMQClient("webserverRequest.ini","testServer");
 /*
@@ -33,7 +32,7 @@ print_r($response);
 echo "\n\n";
 
 //echo $argv[0]." END".PHP_EOL;
-}
+//}
 
 
 ?>
