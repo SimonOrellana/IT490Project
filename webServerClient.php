@@ -1,11 +1,13 @@
-#!/usr/bin/php
+
 <?php
 require_once('path.inc');
-require_once('get_host_info.inc');
+//require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
+$usern = $_POST['uname'];
+$passw = $_POST['pword'];
 
+sendRabbitWeb("login",$usern,$passw);
 
-//sendRabbitWeb("login","testuser","testpassword");
 function sendRabbitWeb($type,$username,$password){
 
 $client = new rabbitMQClient("webserverRequest.ini","testServer");
@@ -30,11 +32,12 @@ $response = $client->send_request($request);
 
 echo "client received response: ".PHP_EOL;
 print_r($response);
-return $response;
+return array(true);
+//return $response;
 echo "\n\n";
 
 //echo $argv[0]." END".PHP_EOL;
-}
+//}
 
 
 ?>
