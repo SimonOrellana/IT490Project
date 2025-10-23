@@ -1,5 +1,10 @@
-<php
+<?php
 session_start();
+if(!isset($_SESSION['token'])){
+	session_unset();
+	session_destroy();
+	header("Location: index.html");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
