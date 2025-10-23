@@ -11,14 +11,14 @@ function HandleLoginResponse(response)
 function SendLoginRequest(username,password)
 {
 	var request = new XMLHttpRequest();
-	request.open("POST","login.php",true);
+	request.open("POST","webServerClient.php",true);
 	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	request.onreadystatechange= function ()
 	{
 		
 		if ((this.readyState == 4)&&(this.status == 200))
 		{
-			HandleLoginResponse(this.responseText);
+			window.location.href='homepage.html';
 		}		
 	}
 	request.send("type=login&uname="+encodeURIComponent(username)+"&pword="+encodeURIComponent(password));
