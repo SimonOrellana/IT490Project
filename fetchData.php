@@ -11,4 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $query = "SELECT * FROM users";
 $result = mysqli_query($conn,$query);
 return $result;
+
+mysqli_close($conn);
 }
+?>
