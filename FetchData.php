@@ -11,3 +11,5 @@ function fetch() {
 	$output =mysqli_fetch_all($result);
 	return $output;
 }
+
+
