@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
 
-include("dbRequestClient.php");
+include("webServerClient.php");
 
-sendRabbitDb("login","user","pass");
+sendRabbitWeb("login","user","pass");
 
 ?>

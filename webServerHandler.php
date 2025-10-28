@@ -24,6 +24,8 @@ function requestProcessor($request)
   
   echo "received request".PHP_EOL;
   var_dump($request);
+  return sendRabbitDb('login','user','password');
+  /*
   if(!isset($request['type']))
   {
     return "ERROR: unsupported message type";
@@ -37,6 +39,8 @@ function requestProcessor($request)
     case "register":
       return doRegister($request['username'],$request['password']);
   }
+  */
+
   //return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
 
