@@ -1,5 +1,5 @@
 <?php
-function feth() {
+function fetch() {
 	$servername="127.0.0.1";
 	$username="fetch";
 	$password="password";
